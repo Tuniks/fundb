@@ -3,14 +3,14 @@ import {View, FlatList, Text, Button, TouchableOpacity} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import {Card, Icon} from 'react-native-elements'
 
-
 import Style from './Style.js'
 import Tabs from "./Tab";
 
+
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    headerTitle: 'Home',
-  };
+  // static navigationOptions = {
+  //   headerTitle: 'Home',
+  // };
 
   data = [
     {key:0, name: 'Burguesão', evals:{price:0.9, wait:'0.3'}},
@@ -29,9 +29,7 @@ class HomeScreen extends React.Component {
 
     return(
       <TouchableOpacity
-        onPress={()=>navigate('Details', {theme: item.name})}
-        // background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}
-      >
+        onPress={()=>navigate('Details', {theme: item.name})}>
 
         <Card title={item.name} containerStyle={Style.card}>
           <View style={Style.buttonIconRow}>
@@ -50,14 +48,14 @@ class HomeScreen extends React.Component {
 
     return(
         <Tabs>
-          <View title={"FIRE"} style={Style.container}>
+          <View title={'fire'} style={Style.container}>
             <FlatList showsVerticalScrollIndicator={false}
               data={this.data}
               renderItem={this.button.bind(this)}
             />
           </View>
 
-          <View title={"CATEGORIES"} style={Style.container}>
+          <View title={'cannabis'} style={Style.container}>
               <Text> afffeee </Text>
           </View>
         </Tabs>
@@ -83,10 +81,12 @@ class DetailsScreen extends React.Component {
 const RootNavigator = StackNavigator({
     Home: {screen: HomeScreen,},
     Details: {screen: DetailsScreen,},
-  },{
+  }
+  ,{
     navigationOptions: {
       headerStyle: Style.header
     },
-  });
+  }
+  );
 
 export default RootNavigator;

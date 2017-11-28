@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     borderTopColor: 'black', // StatusBar color
     backgroundColor: '#4A7C88',
-    height: 65,
+    height: 55,
   },
   card:{
     marginTop: 10,
@@ -33,22 +33,23 @@ const styles = StyleSheet.create({
   },
   tabsContainer:{
     flexDirection: 'row',
-    paddingTop: 30,
+    //paddingTop: 30,
     backgroundColor: '#4A7C88',
+    height:60,
   },
   tab:{
     flex: 1,
     paddingVertical: 15,
-    borderBottomWidth: 3,
-    borderBottomColor: 'transparent',
   },
-  activeTab:{
-    borderBottomColor:'white',
-  },
-  tabText:{
+  tabIcon:{
     color: 'white',
-    textAlign: 'center'
-  }
+  },
+  tabIconActive:{
+    color: 'white',
+  },
+  contentContainer:{
+    flex:1,
+  },
 });
 
 export default styles;

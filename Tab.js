@@ -5,7 +5,9 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import { Icon } from 'react-native-elements'
 import styles from "./Style";
+
 
 export default class Tabs extends Component {
     state = {
@@ -15,21 +17,23 @@ export default class Tabs extends Component {
     render({ children } = this.props){
         return(
             <View style={styles.container}>
+                <View style={styles.contentContainer}>
+                    {children[this.state.activeTab]}
+                </View>
+
                 <View style={styles.tabsContainer}>
                     {children.map(( {props: { title }}, index) =>
                         <TouchableOpacity
-                            style={[styles.tab, index === this.state.activeTab ? styles.activeTab : []]}
+                            style={styles.tab}
                             onPress={() => this.setState({ activeTab: index})}
                             key={index}>
 
-                            <Text style={styles.tabText}>
-                                {title}
-                            </Text>
+                            <Icon name={title} type={'material-community'} color={index === this.state.activeTab ? 'black' : 'white' }/>
+                            {/*<Text style={styles.tabText}>*/}
+                                {/*{title}*/}
+                            {/*</Text>*/}
                         </TouchableOpacity>
                     )}
-                </View>
-                <View style={styles.contencContainer}>
-                    {children[this.state.activeTab]}
                 </View>
             </View>
         );
