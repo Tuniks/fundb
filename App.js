@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, FlatList, Text, Button, TouchableNativeFeedback} from 'react-native';
+import {View, FlatList, Text, Button, TouchableOpacity} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import {Card, Icon} from 'react-native-elements'
 
 
 import Style from './Style.js'
+import Tabs from "./Tab";
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -27,7 +28,7 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
 
     return(
-      <TouchableNativeFeedback
+      <TouchableOpacity
         onPress={()=>navigate('Details', {theme: item.name})}
         // background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}
       >
@@ -40,7 +41,7 @@ class HomeScreen extends React.Component {
           </View>
         </Card>
 
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     )
   };
 
@@ -48,12 +49,18 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
 
     return(
-      <View style={Style.container}>
-        <FlatList
-          data={this.data}
-          renderItem={this.button.bind(this)}
-        />
-      </View>
+        <Tabs>
+          <View title={"FIRE"} style={Style.container}>
+            <FlatList showsVerticalScrollIndicator={false}
+              data={this.data}
+              renderItem={this.button.bind(this)}
+            />
+          </View>
+
+          <View title={"CATEGORIES"} style={Style.container}>
+              <Text> afffeee </Text>
+          </View>
+        </Tabs>
     )
   }
 }
