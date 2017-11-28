@@ -28,10 +28,7 @@ export default class Tabs extends Component {
                             onPress={() => this.setState({ activeTab: index})}
                             key={index}>
 
-                            <Icon name={title} type={'material-community'} color={index === this.state.activeTab ? 'black' : 'white' }/>
-                            {/*<Text style={styles.tabText}>*/}
-                                {/*{title}*/}
-                            {/*</Text>*/}
+                            <Icon name={title} type={'material-community'} color={index === this.state.activeTab ? 'white' : 'black'}/>
                         </TouchableOpacity>
                     )}
                 </View>

@@ -58,6 +58,10 @@ class HomeScreen extends React.Component {
           <View title={'cannabis'} style={Style.container}>
               <Text> afffeee </Text>
           </View>
+
+          <View title={'panda'} style={Style.container}>
+              <Text> cuidado minha genteeee </Text>
+          </View>
         </Tabs>
     )
   }
