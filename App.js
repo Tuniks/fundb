@@ -6,31 +6,31 @@ import {Card, Icon} from 'react-native-elements';
 import Style from './Style.js';
 import Tabs from './Tab';
 import RestaurantScreen from './Restaurant';
-
+import data from './data'
 
 class HomeScreen extends React.Component {
   // static navigationOptions = {
   //   headerTitle: 'Home',
   // };
 
-  data = [
-    {key:0, name: 'Burguesão', evals:{price:0.9, wait:'0.3'}},
-    {key:1, name: 'Comunistinha'},
-    {key:2, name: 'Grêmio'},
-    {key:3, name: 'Novo'},
-    {key:4, name: 'Caro'},
-    {key:5, name: 'Dilminha'},
-    {key:6, name: 'Loira'},
-    {key:7, name: 'Yaki'},
-    {key:8, name: 'Spobreto'},
-  ];
+  // data = [
+  //   {key:0, name: 'Burguesão', evals:{price:0.9, wait:'0.3'}},
+  //   {key:1, name: 'Comunistinha'},
+  //   {key:2, name: 'Grêmio'},
+  //   {key:3, name: 'Novo'},
+  //   {key:4, name: 'Caro'},
+  //   {key:5, name: 'Dilminha'},
+  //   {key:6, name: 'Loira'},
+  //   {key:7, name: 'Yaki'},
+  //   {key:8, name: 'Spobreto'},
+  // ];
 
   button({item}){
     const { navigate } = this.props.navigation;
 
     return(
       <TouchableOpacity
-        onPress={()=>navigate('Restaurant', {theme: item.name})}>
+        onPress={()=>navigate('Restaurant', {infos: item})}>
 
         <Card title={item.name} containerStyle={Style.card}>
           <View style={Style.buttonIconRow}>
@@ -51,7 +51,7 @@ class HomeScreen extends React.Component {
         <Tabs>
           <View title={'fire'} style={Style.container}>
             <FlatList showsVerticalScrollIndicator={false}
-              data={this.data}
+              data={data.restaurantes}
               renderItem={this.button.bind(this)}
             />
           </View>

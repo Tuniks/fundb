@@ -9,28 +9,18 @@ import {
 import { Icon } from 'react-native-elements'
 
 export default class RestaurantScreen extends Component{
-    constructor() {
-        super();
-        this.state = {
-            reviews:[
-                {key: 0, name: 'Antonio', review: 'Cara gnt esse cara é top demais namoral como assim. Eu sei q to chovendo no molhado, mas ele merece.'},
-                {key: 1, name: 'Resto do Mundo', review: 'true dat review de cima.'},
-                {key: 2, name: 'Resto da Galaxia', review: 'põe true nisso.'},
-                {key: 3, name: 'Anthony Fandango', review: 'acho overrated, 6/10'},
-            ]
-        };
-    }
 
     render(){
+        const { params } = this.props.navigation.state;
         var stars = [];
         var moneys = [];
-        var foods = this.createFoodsView();
-        for(let i = 0; i<4; i++){
+        var foods = this.createFoodsView(params.infos.type);
+        for(let i = 0; i<params.infos.rating[1]; i++){
             stars.push(
                 <Icon key={i} name={'star'} type={'FontAwesome'}/>
             )
         }
-        for(let i = 0; i<3; i++){
+        for(let i = 0; i<params.infos.rating[0]; i++){
             moneys.push(
                 <Icon key={i} name={'bitcoin'} type={'foundation'}/>
             )
@@ -39,11 +29,11 @@ export default class RestaurantScreen extends Component{
 
         return(
             <ScrollView>
-                <Image source={require('./img/kanye.jpg')} style={{height: 225, alignSelf: 'center'}}/>
+                <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
 
                 <View style={{paddingVertical: 15, paddingHorizontal:5}}>
                     <Text style={{fontSize: 32, fontWeight:'bold'}}>
-                        kanye west
+                        {params.infos.name}
                     </Text>
                 </View>
 
@@ -69,10 +59,10 @@ export default class RestaurantScreen extends Component{
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
-                {this.state.reviews.map((item, index) => {
+                {params.infos.reviews.map((item, index) => {
                     return (
                         <View key={index+300} style={{paddingHorizontal:10, paddingTop:25}}>
-                            <Text key={index} style={{fontWeight:'bold'}}> {item.name} </Text>
+                            <Text key={index} style={{fontWeight:'bold'}}> {item.namerev} </Text>
                             <Text key={index+100}> {item.review} </Text>
                         </View>
                 )})}
@@ -83,21 +73,21 @@ export default class RestaurantScreen extends Component{
     handlePress(){
     }
 
-    createFoodsView(){
+    createFoodsView(type){
         food = [];
-        if (true){
+        if (type[0]){
             food.push(<Icon key={1} name={'food-croissant'} type={'material-community'}/>)
         }
-        if (true){
+        if (type[1]){
             food.push(<Icon key={2} name={'md-beer'} type={'ionicon'}/>)
         }
-        if (true){
+        if (type[2]){
             food.push(<Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>)
         }
-        if (true){
+        if (type[3]){
             food.push(<Icon key={4} name={'balance-scale'} type={'font-awesome'}/>)
         }
-        if (true){
+        if (type[4]){
             food.push(<Icon key={5} name={'candycane'} type={'material-community'}/>)
         }
         return food;
