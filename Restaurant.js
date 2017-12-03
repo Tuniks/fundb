@@ -4,7 +4,10 @@ import {
     Stylesheet,
     Text,
     Image,
-    View, FlatList, ScrollView
+    View,
+    FlatList,
+    ScrollView,
+    Button
 } from 'react-native';
 import { Icon } from 'react-native-elements'
 
@@ -37,8 +40,13 @@ export default class RestaurantScreen extends Component{
                     </Text>
                 </View>
 
-                <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5, paddingTop:60}}>
+                <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5}}>
                         <Text style={{}}> 500m </Text>
+                        {/*<Button*/}
+                        {/*title="Mostrar no mapa"*/}
+                        {/*color="#38856e"*/}
+                        {/*accessibilityLabel="Mostrar este lugar no mapa"*/}
+                        {/*/>*/}
                         <TouchableOpacity onPress={this.handlePress}>
                             <Text style={{}}> map </Text>
                         </TouchableOpacity>
@@ -76,19 +84,44 @@ export default class RestaurantScreen extends Component{
     createFoodsView(type){
         food = [];
         if (type[0]){
-            food.push(<Icon key={1} name={'food-croissant'} type={'material-community'}/>)
+            food.push(
+                <View>
+                    <Icon key={1} name={'food-croissant'} type={'material-community'}/>
+                    <Text style={{fontSize: 10}}>Salgados</Text>
+                </View>
+            )
         }
         if (type[1]){
-            food.push(<Icon key={2} name={'md-beer'} type={'ionicon'}/>)
+            food.push(
+                <View>
+                    <Icon key={2} name={'ios-beer'} type={'ionicon'}/>
+                    <Text style={{fontSize: 10}}>Bebidas</Text>
+                </View>
+            )
         }
         if (type[2]){
-            food.push(<Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>)
+            food.push(
+                <View>
+                        <Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>
+                        <Text style={{fontSize: 10}}>Prato Feito</Text>
+                </View>
+            )
         }
         if (type[3]){
-            food.push(<Icon key={4} name={'balance-scale'} type={'font-awesome'}/>)
+            food.push(
+                <View>
+                    <Icon key={1} name={'scale'} type={'material-community'}/>
+                    <Text style={{fontSize: 10}}>A Quilo</Text>
+                </View>
+            )
         }
         if (type[4]){
-            food.push(<Icon key={5} name={'candycane'} type={'material-community'}/>)
+            food.push(
+                <View>
+                    <Icon key={1} name={'candycane'} type={'material-community'}/>
+                    <Text style={{fontSize: 10}}>Sobremesas</Text>
+                </View>
+            )
         }
         return food;
     }
