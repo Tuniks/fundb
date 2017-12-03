@@ -7,11 +7,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ECEFF6',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+    homeCategoryTitle: {
+        fontSize: 25,
+        fontWeight:'bold',
+        textAlign:"left",
+        marginTop: 10,
+        marginHorizontal: 10,
+    },
   header: {
-    borderTopWidth: 0,
+      borderTopWidth: 0,
     borderTopColor: 'black', // StatusBar color
     backgroundColor: '#4A7C88',
     height: 55,
@@ -19,8 +24,9 @@ const styles = StyleSheet.create({
   card:{
     marginTop: 10,
     marginBottom: 10,
-    marginHorizontal:0,
-    width: width * .925,
+    marginHorizontal:10,
+    width: width * .5,
+      height: height * 0.7,
   },
   buttonIconRow:{
     width: '100%',

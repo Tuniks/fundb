@@ -50,10 +50,34 @@ class HomeScreen extends React.Component {
     return(
         <Tabs>
           <View title={'fire'} style={Style.container}>
-            <FlatList showsVerticalScrollIndicator={false}
-              data={data.restaurantes}
-              renderItem={this.button.bind(this)}
-            />
+              <Text style={Style.homeCategoryTitle}>Onde comer</Text>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                data={data.restaurantes}
+                renderItem={this.button.bind(this)}
+                showsHorizontalScrollIndicator={false}
+                horizontal
+              />
+
+              <Text style={Style.homeCategoryTitle}>Minhas matérias</Text>
+              <FlatList
+                  showsVerticalScrollIndicator={false}
+                  data={data.restaurantes}
+                  renderItem={this.button.bind(this)}
+                  showsHorizontalScrollIndicator={false}
+                  horizontal
+              />
+
+              <Text style={Style.homeCategoryTitle}>Cool places</Text>
+              <FlatList
+                  showsVerticalScrollIndicator={false}
+                  data={data.restaurantes}
+                  renderItem={this.button.bind(this)}
+                  showsHorizontalScrollIndicator={false}
+                  horizontal
+              />
+
+
           </View>
 
           <View title={'cannabis'} style={Style.container}>
