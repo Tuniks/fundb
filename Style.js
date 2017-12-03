@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   buttonIconRow:{
     width: '100%',
     alignContent: 'center',
+    justifyContent: 'space-around',
     flexDirection: 'row',
     paddingTop: 10,
   },

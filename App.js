@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, FlatList, Text, Button, TouchableOpacity} from 'react-native';
 import {StackNavigator} from 'react-navigation';
-import {Card, Icon} from 'react-native-elements'
+import {Card, Icon} from 'react-native-elements';
 
-import Style from './Style.js'
-import Tabs from "./Tab";
+import Style from './Style.js';
+import Tabs from './Tab';
+import RestaurantScreen from './Restaurant';
 
 
 class HomeScreen extends React.Component {
@@ -29,7 +30,7 @@ class HomeScreen extends React.Component {
 
     return(
       <TouchableOpacity
-        onPress={()=>navigate('Details', {theme: item.name})}>
+        onPress={()=>navigate('Restaurant', {theme: item.name})}>
 
         <Card title={item.name} containerStyle={Style.card}>
           <View style={Style.buttonIconRow}>
@@ -85,10 +86,11 @@ class DetailsScreen extends React.Component {
 const RootNavigator = StackNavigator({
     Home: {screen: HomeScreen,},
     Details: {screen: DetailsScreen,},
+    Restaurant: {screen: RestaurantScreen,},
   }
   ,{
     navigationOptions: {
-      headerStyle: Style.header
+      // headerStyle: Style.header
     },
   }
   );
