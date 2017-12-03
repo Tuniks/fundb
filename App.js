@@ -68,31 +68,16 @@ class HomeScreen extends React.Component {
   }
 }
 
-class DetailsScreen extends React.Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: navigation.state.params.theme,
-  });
-
-  render() {
-    const { params } = this.props.navigation.state;
-    return (
-      <View>
-        <Text>Chat with {params.theme}</Text>
-      </View>
-    );
-  }
-}
-
-const RootNavigator = StackNavigator({
-    Home: {screen: HomeScreen,},
-    Details: {screen: DetailsScreen,},
-    Restaurant: {screen: RestaurantScreen,},
-  }
-  ,{
-    navigationOptions: {
-      // headerStyle: Style.header
+const RootNavigator = StackNavigator(
+    {
+        Home: {screen: HomeScreen,},
+        Restaurant: {screen: RestaurantScreen,},
     },
-  }
+    {
+        navigationOptions: {
+            // headerStyle: Style.header
+        },
+    }
   );
 
 export default RootNavigator;
