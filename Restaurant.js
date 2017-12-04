@@ -85,40 +85,40 @@ export default class RestaurantScreen extends Component{
         food = [];
         if (type[0]){
             food.push(
-                <View>
-                    <Icon key={1} name={'food-croissant'} type={'material-community'}/>
+                <View key={1}>
+                    <Icon name={'food-croissant'} type={'material-community'}/>
                     <Text style={{fontSize: 10}}>Salgados</Text>
                 </View>
             )
         }
         if (type[1]){
             food.push(
-                <View>
-                    <Icon key={2} name={'ios-beer'} type={'ionicon'}/>
+                <View key={2}>
+                    <Icon name={'ios-beer'} type={'ionicon'}/>
                     <Text style={{fontSize: 10}}>Bebidas</Text>
                 </View>
             )
         }
         if (type[2]){
             food.push(
-                <View>
-                        <Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>
+                <View key={3}>
+                        <Icon name={'ios-restaurant'} type={'ionicon'}/>
                         <Text style={{fontSize: 10}}>Prato Feito</Text>
                 </View>
             )
         }
         if (type[3]){
             food.push(
-                <View>
-                    <Icon key={1} name={'scale'} type={'material-community'}/>
+                <View key={4}>
+                    <Icon name={'scale'} type={'material-community'}/>
                     <Text style={{fontSize: 10}}>A Quilo</Text>
                 </View>
             )
         }
         if (type[4]){
             food.push(
-                <View>
-                    <Icon key={1} name={'candycane'} type={'material-community'}/>
+                <View key={5}>
+                    <Icon name={'candycane'} type={'material-community'}/>
                     <Text style={{fontSize: 10}}>Sobremesas</Text>
                 </View>
             )
