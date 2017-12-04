@@ -9,22 +9,6 @@ import RestaurantScreen from './Restaurant';
 import data from './data'
 
 class HomeScreen extends React.Component {
-  // static navigationOptions = {
-  //   headerTitle: 'Home',
-  // };
-
-  // data = [
-  //   {key:0, name: 'Burguesão', evals:{price:0.9, wait:'0.3'}},
-  //   {key:1, name: 'Comunistinha'},
-  //   {key:2, name: 'Grêmio'},
-  //   {key:3, name: 'Novo'},
-  //   {key:4, name: 'Caro'},
-  //   {key:5, name: 'Dilminha'},
-  //   {key:6, name: 'Loira'},
-  //   {key:7, name: 'Yaki'},
-  //   {key:8, name: 'Spobreto'},
-  // ];
-
   button({item}){
     const { navigate } = this.props.navigation;
 
@@ -76,8 +60,6 @@ class HomeScreen extends React.Component {
                   showsHorizontalScrollIndicator={false}
                   horizontal
               />
-
-
           </View>
 
           <View title={'cannabis'} style={Style.container}>
