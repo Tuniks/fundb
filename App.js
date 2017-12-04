@@ -37,7 +37,7 @@ class HomeScreen extends React.Component {
               <Text style={Style.homeCategoryTitle}>Onde comer</Text>
               <FlatList
                 showsVerticalScrollIndicator={false}
-                data={data.restaurantes}
+                data={data.restaurants}
                 renderItem={this.button.bind(this)}
                 showsHorizontalScrollIndicator={false}
                 horizontal
@@ -46,7 +46,7 @@ class HomeScreen extends React.Component {
               <Text style={Style.homeCategoryTitle}>Minhas matérias</Text>
               <FlatList
                   showsVerticalScrollIndicator={false}
-                  data={data.restaurantes}
+                  data={data.restaurants}
                   renderItem={this.button.bind(this)}
                   showsHorizontalScrollIndicator={false}
                   horizontal
@@ -55,7 +55,7 @@ class HomeScreen extends React.Component {
               <Text style={Style.homeCategoryTitle}>Cool places</Text>
               <FlatList
                   showsVerticalScrollIndicator={false}
-                  data={data.restaurantes}
+                  data={data.restaurants}
                   renderItem={this.button.bind(this)}
                   showsHorizontalScrollIndicator={false}
                   horizontal

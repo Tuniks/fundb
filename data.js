@@ -1,5 +1,5 @@
 export default data = {
-    restaurantes:[
+    restaurants:[
         {key:0, name:'Burguesão', rating:[5,3], type:[false,true,false,true,true], img:require('./img/burgues-safado.jpg'),
             reviews:[
                 {key:0, namerev:'johnny', review:'sem gosto e caro naum gosto so aceita credito.'},
@@ -19,5 +19,6 @@ export default data = {
             ]
         },
     ],
-    professores:[],
+    teachers:[],
+
 };
