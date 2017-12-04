@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements'
 
-export default class RestaurantScreen extends Component{
+export default class SubjectScreen extends Component{
 
     render(){
         const { params } = this.props.navigation.state;
