@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements'
 import data from './data'
+import { RootNavigator } from './App'
 
 
 export default class SubjectScreen extends Component{
@@ -52,13 +53,6 @@ export default class SubjectScreen extends Component{
                 </View>
                 <View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
-                <View>
-                    {teachers.map((item, index) => {
-                        return (
-                            <Text key={index}> {item.name} </Text>
-                        )
-                    })}
-                </View>
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:20, paddingHorizontal:10}}>
                     <View style={{flexDirection:'row', justifyContent:'center'}}>
                         {moneys}
@@ -70,6 +64,17 @@ export default class SubjectScreen extends Component{
                 {/*<View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>*/}
                     {/*{foods}*/}
                 {/*</View>*/}
+
+                <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingVertical:20}}/>
+
+                <View style={{paddingHorizontal:5, paddingVertical:10}}>
+                    <Text style={{fontWeight:'bold'}}>Professores</Text>
+                    {teachers.map((item, index) => {
+                        return (
+                            <Text key={index}> {item.name} </Text>
+                        )
+                    })}
+                </View>
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
