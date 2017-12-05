@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 		marginTop: 10,
 		marginHorizontal: 10,
 		color: '#3f3f3f',
-		fontFamily: 'Roboto' 
+		// fontFamily: 'Roboto'
 	},
   header: {
     borderTopWidth: 0,

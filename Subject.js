@@ -10,6 +10,8 @@ import {
     Button
 } from 'react-native';
 import { Icon } from 'react-native-elements'
+import data from './data'
+
 
 export default class SubjectScreen extends Component{
 
@@ -17,18 +19,21 @@ export default class SubjectScreen extends Component{
         const { params } = this.props.navigation.state;
         var stars = [];
         var moneys = [];
-        var foods = this.createFoodsView(params.infos.type);
-        for(let i = 0; i<params.infos.rating[1]; i++){
-            stars.push(
-                <Icon key={i} name={'star'} type={'FontAwesome'}/>
-            )
+        var teachers_subject = [];
+        var teachers = [];
+        //ALGORITMO MTO PROVAVELMENTE PROBLEMATICO
+        for(let i = 0; i < data.subjects_teachers.length; i++){
+            if(data.subjects_teachers[i].subject === params.infos.name){
+                teachers_subject.push(data.subjects_teachers[i]);
+            }
         }
-        for(let i = 0; i<params.infos.rating[0]; i++){
-            moneys.push(
-                <Icon key={i} name={'bitcoin'} type={'foundation'}/>
-            )
+        for(let i=0; i < teachers_subject.length; i++){
+            for(let j=0; j < data.teachers.length; j++) {
+                if (data.teachers[j].name === teachers_subject[i].teacher) {
+                    teachers.push(data.teachers[j]);
+                }
+            }
         }
-
 
         return(
             <ScrollView>
@@ -42,17 +47,19 @@ export default class SubjectScreen extends Component{
 
                 <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5}}>
                         <Text style={{}}> 500m </Text>
-                        {/*<Button*/}
-                        {/*title="Mostrar no mapa"*/}
-                        {/*color="#38856e"*/}
-                        {/*accessibilityLabel="Mostrar este lugar no mapa"*/}
-                        {/*/>*/}
                         <TouchableOpacity onPress={this.handlePress}>
                             <Text style={{}}> map </Text>
                         </TouchableOpacity>
                 </View>
                 <View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
+                <View>
+                    {teachers.map((item, index) => {
+                        return (
+                            <Text key={index}> {item.name} </Text>
+                        )
+                    })}
+                </View>
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:20, paddingHorizontal:10}}>
                     <View style={{flexDirection:'row', justifyContent:'center'}}>
                         {moneys}
@@ -61,68 +68,68 @@ export default class SubjectScreen extends Component{
                         {stars}
                     </View>
                 </View>
-                <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>
-                    {foods}
-                </View>
+                {/*<View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>*/}
+                    {/*{foods}*/}
+                {/*</View>*/}
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
-                {params.infos.reviews.map((item, index) => {
-                    return (
-                        <View key={index+300} style={{paddingHorizontal:10, paddingTop:25}}>
-                            <Text key={index} style={{fontWeight:'bold'}}> {item.namerev} </Text>
-                            <Text key={index+100}> {item.review} </Text>
-                        </View>
-                )})}
+                {/*{params.infos.reviews.map((item, index) => {*/}
+                    {/*return (*/}
+                        {/*<View key={index+300} style={{paddingHorizontal:10, paddingTop:25}}>*/}
+                            {/*<Text key={index} style={{fontWeight:'bold'}}> {item.namerev} </Text>*/}
+                            {/*<Text key={index+100}> {item.review} </Text>*/}
+                        {/*</View>*/}
+                {/*)})}*/}
             </ScrollView>
         )
     }
 
-    handlePress(){
-    }
-
-    createFoodsView(type){
-        food = [];
-        if (type[0]){
-            food.push(
-                <View>
-                    <Icon key={1} name={'food-croissant'} type={'material-community'}/>
-                    <Text style={{fontSize: 10}}>Salgados</Text>
-                </View>
-            )
-        }
-        if (type[1]){
-            food.push(
-                <View>
-                    <Icon key={2} name={'ios-beer'} type={'ionicon'}/>
-                    <Text style={{fontSize: 10}}>Bebidas</Text>
-                </View>
-            )
-        }
-        if (type[2]){
-            food.push(
-                <View>
-                        <Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>
-                        <Text style={{fontSize: 10}}>Prato Feito</Text>
-                </View>
-            )
-        }
-        if (type[3]){
-            food.push(
-                <View>
-                    <Icon key={1} name={'scale'} type={'material-community'}/>
-                    <Text style={{fontSize: 10}}>A Quilo</Text>
-                </View>
-            )
-        }
-        if (type[4]){
-            food.push(
-                <View>
-                    <Icon key={1} name={'candycane'} type={'material-community'}/>
-                    <Text style={{fontSize: 10}}>Sobremesas</Text>
-                </View>
-            )
-        }
-        return food;
-    }
+    // handlePress(){
+    // }
+    //
+    // createFoodsView(type){
+    //     food = [];
+    //     if (type[0]){
+    //         food.push(
+    //             <View>
+    //                 <Icon key={1} name={'food-croissant'} type={'material-community'}/>
+    //                 <Text style={{fontSize: 10}}>Salgados</Text>
+    //             </View>
+    //         )
+    //     }
+    //     if (type[1]){
+    //         food.push(
+    //             <View>
+    //                 <Icon key={2} name={'ios-beer'} type={'ionicon'}/>
+    //                 <Text style={{fontSize: 10}}>Bebidas</Text>
+    //             </View>
+    //         )
+    //     }
+    //     if (type[2]){
+    //         food.push(
+    //             <View>
+    //                     <Icon key={3} name={'ios-restaurant'} type={'ionicon'}/>
+    //                     <Text style={{fontSize: 10}}>Prato Feito</Text>
+    //             </View>
+    //         )
+    //     }
+    //     if (type[3]){
+    //         food.push(
+    //             <View>
+    //                 <Icon key={1} name={'scale'} type={'material-community'}/>
+    //                 <Text style={{fontSize: 10}}>A Quilo</Text>
+    //             </View>
+    //         )
+    //     }
+    //     if (type[4]){
+    //         food.push(
+    //             <View>
+    //                 <Icon key={1} name={'candycane'} type={'material-community'}/>
+    //                 <Text style={{fontSize: 10}}>Sobremesas</Text>
+    //             </View>
+    //         )
+    //     }
+    //     return food;
+    // }
 }
