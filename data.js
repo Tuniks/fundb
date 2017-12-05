@@ -115,7 +115,7 @@ export default data = {
                 {key:1, namerev:'busta', review:'gostei dos cookies'},
                 {key:2, namerev:'antonio', review:'amei fazer o mvp'}]
         },
-        {key:0,
+        {key:1,
             subject:'Cálculo III',
             teacher: 'Abraão',
             rating: [1,0],
@@ -125,7 +125,7 @@ export default data = {
                 {key:2, namerev:'antonio', review:'explicava mal'}
             ]
         },
-        {key:0,
+        {key:2,
             subject:'Cálculo III',
             teacher: 'Nuno',
             rating: [4,1],
@@ -133,7 +133,7 @@ export default data = {
                 {key:0, namerev:'josé', review:'desenhava hiperboloides interceptando conicas como ninguém'},
             ]
         },
-        {key:0,
+        {key:3,
             subject:'Sistemas Digitais',
             teacher: 'Braffman',
             rating: [3,3],
@@ -141,7 +141,7 @@ export default data = {
                 {key:1, namerev:'busta', review:'meu prof favorito'},
             ]
         },
-        {key:0,
+        {key:4,
             subject:'Arquitetura de Computadores',
             teacher: 'Braffman',
             rating: [4,2],

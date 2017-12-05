@@ -34,7 +34,6 @@ export default class SubjectScreen extends Component{
                 }
             }
         }
-
         return(
             <ScrollView>
                 <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
@@ -74,13 +73,18 @@ export default class SubjectScreen extends Component{
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
-                {/*{params.infos.reviews.map((item, index) => {*/}
-                    {/*return (*/}
-                        {/*<View key={index+300} style={{paddingHorizontal:10, paddingTop:25}}>*/}
-                            {/*<Text key={index} style={{fontWeight:'bold'}}> {item.namerev} </Text>*/}
-                            {/*<Text key={index+100}> {item.review} </Text>*/}
-                        {/*</View>*/}
-                {/*)})}*/}
+                {teachers_subject.map((item, index) => {
+                    return <View key={index}>
+                    {item.reviews.map((item_r, index_r) => {
+                        return <View key={index_r+300} style={{paddingHorizontal:10, paddingTop:25}}>
+                            <Text key={index_r} style={{fontWeight:'bold'}}> {item_r.namerev} </Text>
+                            <Text key={index_r+1000}>prof: {item.teacher}</Text>
+                            <Text key={index_r+100}> {item_r.review} </Text>
+                        </View>
+                        })}
+                    </View>
+                })}
+
             </ScrollView>
         )
     }
