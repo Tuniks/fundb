@@ -8,32 +8,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ECEFF6',
   },
-    homeCategoryTitle: {
-        fontSize: 25,
-        fontWeight:'bold',
-        textAlign:"left",
-        marginTop: 10,
-        marginHorizontal: 10,
-    },
+	homeCategoryTitle: {
+		fontSize: 25,
+		textAlign:"left",
+		marginTop: 10,
+		marginHorizontal: 10,
+		color: '#3f3f3f',
+		fontFamily: 'Roboto' 
+	},
   header: {
-      borderTopWidth: 0,
+    borderTopWidth: 0,
     borderTopColor: 'black', // StatusBar color
     backgroundColor: '#4A7C88',
     height: 55,
-  },
-  card:{
+	},
+	card:{
     marginTop: 10,
     marginBottom: 10,
-    marginHorizontal:10,
-    width: width * .5,
-      height: height * 0.7,
+		marginHorizontal:10,
+		width: width * .5,
   },
   buttonIconRow:{
-    width: '100%',
+		width: '100%',
+		height: 20,
     alignContent: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
-    paddingTop: 10,
   },
   buttonIcon:{
     paddingRight: 15,
