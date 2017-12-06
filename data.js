@@ -36,18 +36,18 @@ export default data = {
             name:'Nárnia',
             rating:[5,3],
             type:[false,true,false,true,true],
-            img:require('./img/burgues-safado.jpg'),
+            img:require('./img/narnia.jpg'),
             reviews:[
-                {key:0, namerev:'johnny', review:'sem gosto e caro naum gosto so aceita credito.'},
-                {key:1, namerev:'busta', review:'tem q ser saudavel filho'}]
+                {key:0, namerev:'aslan', review:'raarw xD'},
+                {key:1, namerev:'sr tumnus', review:'mto top'}]
         },
         {key:1,
             name:'Terraço CT',
             rating:[3,3],
-            type:[true,false,false,true,true], img:require('./img/yakuza.jpg'),
+            type:[true,false,false,true,true], img:require('./img/terraco.jpg'),
             reviews:[
-                {key:0, namerev:'formiga', review:'adoro gente sério mto bom'},
-                {key:1, namerev:'kojima', review: '私はそれがとても好き'}]
+                {key:0, namerev:'paulo', review:'curto'},
+                {key:1, namerev:'paulo', review: 'curto msm'}]
         },
         {key:2,
             name:'Prefeitura',

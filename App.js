@@ -8,6 +8,7 @@ import Tabs from './Tab';
 import RestaurantScreen from './Restaurant.js';
 import SubjectScreen from './Subject.js';
 import TeacherScreen from './Teacher.js';
+import PlaceScreen from './Place';
 import data from './data';
 
 
@@ -149,6 +150,7 @@ const RootNavigator = StackNavigator(
         Restaurant: {screen: RestaurantScreen,},
         Subject: {screen: SubjectScreen, },
         Teacher: {screen: TeacherScreen, },
+        Place: {screen: PlaceScreen, },
     },
     {
         navigationOptions: {

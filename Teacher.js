@@ -17,6 +17,7 @@ import { RootNavigator } from './App'
 export default class TeacherScreen extends Component {
 
     render() {
+        const { navigate } = this.props.navigation;
         const {params} = this.props.navigation.state;
         var stars = [];
         var moneys = [];
@@ -88,7 +89,10 @@ export default class TeacherScreen extends Component {
                     <Text style={{fontWeight: 'bold'}}>Matérias</Text>
                     {subjects.map((item, index) => {
                         return (
-                            <Text key={index}> {item.name} </Text>
+                            <TouchableOpacity key={index}
+                                onPress={()=>navigate('Subject', {infos: item})}>
+                                <Text key={index}> {item.name} </Text>
+                            </TouchableOpacity>
                         )
                     })}
                 </View>
