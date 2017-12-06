@@ -14,7 +14,6 @@ import { Icon } from 'react-native-elements'
 
 export default class MapScreen extends Component{
     render(){
-        const { navigate } = this.props.navigation;
         const {params} = this.props.navigation.state;
 
         return(
@@ -29,8 +28,8 @@ export default class MapScreen extends Component{
                 initialRegion={{
                     latitude: params.infos.coordinate.latitude,
                     longitude: params.infos.coordinate.longitude,
-                    latitudeDelta: 0.05,
-                    longitudeDelta: 0.05,
+                    latitudeDelta: 0.005,
+                    longitudeDelta: 0.005,
                 }}
                 showsUserLocation={true}
                 followUserLocation={true}>

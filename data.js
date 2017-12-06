@@ -5,6 +5,7 @@ export default data = {
             rating:[5,3],
             type:[false,true,false,true,true],
             img:require('./img/burgues-safado.jpg'),
+            coordinate:{latitude:-22.861483,longitude:-43.228043},
             reviews:[
                 {key:0, namerev:'johnny', review:'sem gosto e caro naum gosto so aceita credito.'},
                 {key:1, namerev:'busta', review:'tem q ser saudavel filho'}]
@@ -12,7 +13,9 @@ export default data = {
         {key:1,
             name:'Yakuza',
             rating:[3,3],
-            type:[true,false,false,true,true], img:require('./img/yakuza.jpg'),
+            type:[true,false,false,true,true],
+            img:require('./img/yakuza.jpg'),
+            coordinate:{latitude:-22.860440,longitude:-43.229196},
             reviews:[
                 {key:0, namerev:'formiga', review:'adoro gente sério mto bom'},
                 {key:1, namerev:'kojima', review: '私はそれがとても好き'}]
@@ -22,6 +25,7 @@ export default data = {
             rating:[1,5],
             type:[true,true,true,true,true],
             img:require('./img/kanye.jpg'),
+            coordinate:{latitude:-22.985606,longitude:-43.235062},
             reviews:[
                 {key:0, namerev: 'Antonio', review: 'Cara gnt esse cara é top demais namoral como assim. Eu sei q to chovendo no molhado, mas ele merece.'},
                 {key:1, namerev: 'Resto do Mundo', review: 'true dat review de cima.'},

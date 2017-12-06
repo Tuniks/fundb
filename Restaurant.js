@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements'
 import StarRating from 'react-native-star-rating';
+import { RootNavigator } from './App'
 
 export default class RestaurantScreen extends Component{
-
 	render(){
+        const { navigate } = this.props.navigation;
 		const { params } = this.props.navigation.state;
 		var stars = [];
 		var moneys = [];
@@ -43,8 +44,8 @@ export default class RestaurantScreen extends Component{
 
 				<View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5}}>
 						<Text style={{}}> 500m </Text>
-						<TouchableOpacity onPress={this.handlePress}>
-							<Text style={{}}>Mostrar no mapa</Text>
+						<TouchableOpacity onPress={() => navigate('Map', {infos: params.infos})}>
+							<Text style={{}}>map</Text>
 						</TouchableOpacity>
 				</View>
 				<View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
@@ -82,9 +83,6 @@ export default class RestaurantScreen extends Component{
 			</View>
 			</ScrollView>
 		)
-	}
-
-	handlePress(){
 	}
 
 	createFoodsView(type){
