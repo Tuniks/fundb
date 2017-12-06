@@ -37,6 +37,7 @@ export default data = {
             rating:[5,3],
             type:[false,true,false,true,true],
             img:require('./img/narnia.jpg'),
+            coordinate:{latitude:-22.857654,longitude:-43.232503},
             reviews:[
                 {key:0, namerev:'aslan', review:'raarw xD'},
                 {key:1, namerev:'sr tumnus', review:'mto top'}]
@@ -45,6 +46,7 @@ export default data = {
             name:'Terraço CT',
             rating:[3,3],
             type:[true,false,false,true,true], img:require('./img/terraco.jpg'),
+            coordinate:{latitude:-22.859014,longitude:-43.230867},
             reviews:[
                 {key:0, namerev:'paulo', review:'curto'},
                 {key:1, namerev:'paulo', review: 'curto msm'}]
@@ -54,6 +56,7 @@ export default data = {
             rating:[1,5],
             type:[true,true,true,true,true],
             img:require('./img/kanye.jpg'),
+            coordinate:{latitude:-22.846665,longitude:-43.238093},
             reviews:[
                 {key:0, namerev: 'Antonio', review: 'Cara gnt esse cara é top demais namoral como assim. Eu sei q to chovendo no molhado, mas ele merece.'},
                 {key:1, namerev: 'Resto do Mundo', review: 'true dat review de cima.'},

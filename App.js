@@ -10,6 +10,7 @@ import SubjectScreen from './Subject.js';
 import TeacherScreen from './Teacher.js';
 import PlaceScreen from './Place';
 import data from './data';
+import MapScreen from './Map'
 
 
 class HomeScreen extends React.Component {
@@ -151,6 +152,7 @@ const RootNavigator = StackNavigator(
         Subject: {screen: SubjectScreen, },
         Teacher: {screen: TeacherScreen, },
         Place: {screen: PlaceScreen, },
+        Map: {screen: MapScreen, },
     },
     {
         navigationOptions: {

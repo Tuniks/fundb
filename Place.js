@@ -9,11 +9,13 @@ import {
     ScrollView,
     Button
 } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
+import { RootNavigator } from './App'
 
 export default class PlaceScreen extends Component {
 
     render() {
+        const { navigate } = this.props.navigation;
         const {params} = this.props.navigation.state;
         var stars = [];
         var moneys = [];
@@ -40,7 +42,7 @@ export default class PlaceScreen extends Component {
 
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 5}}>
                     <Text style={{}}> 500m </Text>
-                    <TouchableOpacity onPress={this.handlePress}>
+                    <TouchableOpacity onPress={() => navigate('Map', {infos: params.infos})}>
                         <Text style={{}}> map </Text>
                     </TouchableOpacity>
                 </View>
