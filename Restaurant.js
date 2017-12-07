@@ -35,7 +35,6 @@ export default class RestaurantScreen extends Component{
             this.setState({distance: distance});
         });
     }
-
     render(){
         const { navigate } = this.props.navigation;
         const { params } = this.props.navigation.state;
@@ -59,6 +58,7 @@ export default class RestaurantScreen extends Component{
                 <Modal
                     onRequestClosed={_ => {}}
                     animationType={'slide'}
+                    transparent={false}
                     visible={this.state.displayModal} >
 
                     <TextInput
