@@ -24,8 +24,14 @@ export default class RestaurantScreen extends Component{
                       rating: 0};
 
         navigator.geolocation.getCurrentPosition((position) => {
-            let distance = geolib.getDistance(position.coords,
+            const { params } = this.props.navigation.state;
+            console.log(params.info.coordinate);
+            let coords = {latitude: position.coords.latitude,
+                          longitude: position.coords.longitude};
+            console.log(coords);
+            let distance = geolib.getDistance(coords,
                                               params.infos.coordinate);
+            console.log(distance);
             this.setState({distance: distance});
         });
     }
@@ -51,16 +57,17 @@ export default class RestaurantScreen extends Component{
         return(
             <ScrollView>
                 <Modal
+                    onRequestClosed={_ => {}}
                     animationType={'slide'}
-                    transparent={true}
                     visible={this.state.displayModal} >
 
                     <TextInput
+                        style={{marginTop: 200}}
                         onChangeText={(text) => this.setState({review: text})} />
 
                     <Button
                         title={'Avaliar'}
-                        onPress={() => this.setState({displayModal: false})} />
+                        onPress={this.setReview.bind(this)} />
                 </Modal>
 
                 <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
@@ -114,6 +121,17 @@ export default class RestaurantScreen extends Component{
                 </View>
             </ScrollView>
         )
+    }
+
+    setReview() {
+        let { params } = this.props.navigation.state;
+        if (this.state.review !== "")
+            params.infos.reviews.push({key: params.infos.reviews.length,
+                                       namerev: "Usuário",
+                                       review: this.state.review});
+        this.setState({displayModal: false,
+                       review: "",
+                       rating: 0});
     }
 
     createFoodsView(type){
