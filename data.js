@@ -11,10 +11,10 @@ export default data = {
                 {key:1, namerev:'busta', review:'tem q ser saudavel filho'}]
         },
         {key:1,
-            name:'Yakuza',
+            name:'Yakisoba',
             rating:[3,3],
             type:[true,false,false,true,true],
-            img:require('./img/yakuza.jpg'),
+            img:require('./img/yakisoba.jpg'),
             coordinate:{latitude:-22.860440,longitude:-43.229196},
             reviews:[
                 {key:0, namerev:'formiga', review:'adoro gente sério mto bom'},
@@ -59,7 +59,7 @@ export default data = {
             name:'Prefeitura',
             rating:[1,5],
             type:[true,true,true,true,true],
-            img:require('./img/kanye.jpg'),
+            img:require('./img/prefeitura.jpg'),
             coordinate:{latitude:-22.846665,longitude:-43.238093},
             reviews:[
                 {key:0, namerev: 'Antonio', review: 'Cara gnt esse cara é top demais namoral como assim. Eu sei q to chovendo no molhado, mas ele merece.'},

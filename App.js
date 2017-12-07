@@ -133,12 +133,12 @@ class HomeScreen extends React.Component {
               />
           </ScrollView>
 
-          <View title={'cannabis'} style={Style.container}>
-              <Text> afffeee </Text>
+          <View title={'database'} style={Style.container}>
+              <Text> Tela Search com categorias </Text>
           </View>
 
-          <View title={'panda'} style={Style.container}>
-              <Text> cuidado minha genteeee </Text>
+          <View title={'account'} style={Style.container}>
+              <Text> Perfil do usuario </Text>
           </View>
         </Tabs>
     )

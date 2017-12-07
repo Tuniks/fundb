@@ -52,7 +52,7 @@ export default class RestaurantScreen extends Component{
             <ScrollView>
                 <Modal
                     animationType={'slide'}
-                    transparent={'true'}
+                    transparent={true}
                     visible={this.state.displayModal} >
 
                     <TextInput
@@ -110,7 +110,7 @@ export default class RestaurantScreen extends Component{
                         disabled={false}
                         maxStars={5}
                         rating={5}
-                        selectedStar={(rating) => this.setState({displayModal: true, rating: rating})
+                        selectedStar={(rating) => this.setState({displayModal: true, rating: rating})}/>
                 </View>
             </ScrollView>
         )
@@ -153,7 +153,7 @@ export default class RestaurantScreen extends Component{
         if (type[4]){
             food.push(
                 <View key={5}>
-                    <Icon name={'candycane'} type={'material-community'}/>
+                    <Icon name={'cookie'} type={'material-community'}/>
                     <Text style={{fontSize: 10}}>Sobremesas</Text>
                 </View>
             )

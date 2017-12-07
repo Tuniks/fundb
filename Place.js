@@ -19,6 +19,7 @@ export default class PlaceScreen extends Component {
         const {params} = this.props.navigation.state;
         var stars = [];
         var moneys = [];
+        var types =  this.createTypesView(params.infos.type)
         for (let i = 0; i < params.infos.rating[1]; i++) {
             stars.push(
                 <Icon key={i} name={'star'} type={'FontAwesome'}/>
@@ -68,6 +69,10 @@ export default class PlaceScreen extends Component {
                     </View>
                 </View>
 
+                <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>
+                    {types}
+                </View>
+
                 <View style={{
                     alignSelf: 'center',
                     width: '90%',
@@ -86,5 +91,50 @@ export default class PlaceScreen extends Component {
                 })}
             </ScrollView>
         )
+    }
+
+    createTypesView(type_){
+        type = [];
+        if (type_[0]){
+            type.push(
+                <View key={1}>
+                    <Icon name={'ios-warning'} type={'ionicon'}/>
+                    <Text style={{fontSize: 10}}>Perigoso</Text>
+                </View>
+            )
+        }
+        if (type_[1]){
+            type.push(
+                <View key={2}>
+                    <Icon name={'sleep'} type={'material-community'}/>
+                    <Text style={{fontSize: 10}}>Relaxar</Text>
+                </View>
+            )
+        }
+        if (type_[2]){
+            type.push(
+                <View key={3}>
+                    <Icon name={'cannabis'} type={'material-community'}/>
+                    <Text style={{fontSize: 10}}>Festa</Text>
+                </View>
+            )
+        }
+        if (type_[3]){
+            type.push(
+                <View key={4}>
+                    <Icon name={'book'} type={'font-awesome'}/>
+                    <Text style={{fontSize: 10}}>Estudar</Text>
+                </View>
+            )
+        }
+        if (type_[4]){
+            type.push(
+                <View key={5}>
+                    <Icon name={'landscape'}/>
+                    <Text style={{fontSize: 10}}>Paisagem</Text>
+                </View>
+            )
+        }
+        return type;
     }
 }
