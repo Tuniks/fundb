@@ -56,7 +56,7 @@ export default class RestaurantScreen extends Component{
         return(
             <ScrollView>
                 <Modal
-                    onRequestClosed={_ => {}}
+                    onRequestClose={() => this.setState({displayModal: false})}
                     animationType={'slide'}
                     transparent={false}
                     visible={this.state.displayModal} >
