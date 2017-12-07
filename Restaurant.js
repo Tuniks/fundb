@@ -5,7 +5,6 @@ import {
     Text,
     Image,
     View,
-    FlatList,
     ScrollView,
     TextInput,
     Modal,
@@ -14,21 +13,29 @@ import {
 import { Icon } from 'react-native-elements';
 import StarRating from 'react-native-star-rating';
 import { RootNavigator } from './App';
+import geolib from 'geolib';
 
 export default class RestaurantScreen extends Component{
     constructor() {
         super();
         this.state = {displayModal: false,
+                      distance: 500,
                       review: "",
                       rating: 0};
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            let distance = geolib.getDistance(position.coords,
+                                              params.infos.coordinate);
+            this.setState({distance: distance});
+        });
     }
 
     render(){
         const { navigate } = this.props.navigation;
         const { params } = this.props.navigation.state;
-        var stars = [];
-        var moneys = [];
-        var foods = this.createFoodsView(params.infos.type);
+        let stars = [];
+        let moneys = [];
+        let foods = this.createFoodsView(params.infos.type);
         for(let i = 0; i<params.infos.rating[1]; i++){
             stars.push(
                 <Icon key={i} name={'star'} type={'FontAwesome'}/>
@@ -47,10 +54,10 @@ export default class RestaurantScreen extends Component{
                     animationType={'slide'}
                     transparent={'true'}
                     visible={this.state.displayModal} >
-                    
+
                     <TextInput
                         onChangeText={(text) => this.setState({review: text})} />
-                    
+
                     <Button
                         title={'Avaliar'}
                         onPress={() => this.setState({displayModal: false})} />
@@ -65,11 +72,12 @@ export default class RestaurantScreen extends Component{
                 </View>
 
                 <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5}}>
-                        <Text style={{}}> 500m </Text>
+                        <Text style={{}}> {this.state.distance}m </Text>
                         <TouchableOpacity onPress={() => navigate('Map', {infos: params.infos})}>
                             <Text style={{}}>map</Text>
                         </TouchableOpacity>
                 </View>
+
                 <View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:20, paddingHorizontal:10}}>
@@ -80,6 +88,7 @@ export default class RestaurantScreen extends Component{
                         {stars}
                     </View>
                 </View>
+
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>
                     {foods}
                 </View>
@@ -93,16 +102,16 @@ export default class RestaurantScreen extends Component{
                             <Text key={index+100}> {item.review} </Text>
                         </View>
                 )})}
-            <View style={{backgroundColor: '#DDD', paddingVertical: 15, marginVertical:15, alignItems:'center', width:'100%'}}>
-            <Text>Já foi neste lugar? Avalie!</Text>
+
+                <View style={{backgroundColor: '#DDD', paddingVertical: 15, marginVertical:15, alignItems:'center', width:'100%'}}>
+                    <Text>Já foi neste lugar? Avalie!</Text>
                     <StarRating
                         starSize={30}
                         disabled={false}
                         maxStars={5}
                         rating={5}
-                        selectedStar={(rating) => this.setState({displayModal: true, rating: rating})}
-                    />
-            </View>
+                        selectedStar={(rating) => this.setState({displayModal: true, rating: rating})
+                </View>
             </ScrollView>
         )
     }
