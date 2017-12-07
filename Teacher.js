@@ -20,7 +20,7 @@ export default class TeacherScreen extends Component {
         const { navigate } = this.props.navigation;
         const {params} = this.props.navigation.state;
         var stars = [];
-        var moneys = [];
+        var rigidity = [];
         var teachers_subject = [];
         var subjects = [];
         //ALGORITMO MTO PROVAVELMENTE PROBLEMATICO
@@ -36,6 +36,19 @@ export default class TeacherScreen extends Component {
                 }
             }
         }
+
+        for(let i = 0; i<params.infos.rating[0]; i++){
+            rigidity.push(
+                <Icon key={i} name={'ruler'} type={'entypo'}/>
+            )
+        }
+        for(let i = 0; i<params.infos.rating[1]; i++){
+            stars.push(
+                <Icon key={i} name={'graduation-cap'} type={'entypo'}/>
+            )
+        }
+
+
         return (
             <ScrollView>
                 <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
@@ -46,12 +59,6 @@ export default class TeacherScreen extends Component {
                     </Text>
                 </View>
 
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 5}}>
-                    <Text style={{}}> 500m </Text>
-                    <TouchableOpacity onPress={this.handlePress}>
-                        <Text style={{}}> map </Text>
-                    </TouchableOpacity>
-                </View>
                 <View style={{
                     alignSelf: 'center',
                     width: '75%',
@@ -66,11 +73,17 @@ export default class TeacherScreen extends Component {
                     paddingTop: 20,
                     paddingHorizontal: 10
                 }}>
-                    <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                        {moneys}
+                    <View>
+                        <Text>Rigidez</Text>
+                        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                            {rigidity}
+                        </View>
                     </View>
-                    <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                        {stars}
+                    <View>
+                        <Text>Didática</Text>
+                        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                            {stars}
+                        </View>
                     </View>
                 </View>
                 {/*<View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>*/}

@@ -46,12 +46,6 @@ export default class SubjectScreen extends Component{
                     </Text>
                 </View>
 
-                <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:5}}>
-                        <Text style={{}}> 500m </Text>
-                        <TouchableOpacity onPress={this.handlePress}>
-                            <Text style={{}}> map </Text>
-                        </TouchableOpacity>
-                </View>
                 <View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:20, paddingHorizontal:10}}>
@@ -62,9 +56,6 @@ export default class SubjectScreen extends Component{
                         {stars}
                     </View>
                 </View>
-                {/*<View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>*/}
-                    {/*{foods}*/}
-                {/*</View>*/}
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingVertical:20}}/>
 

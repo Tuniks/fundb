@@ -26,10 +26,10 @@ export default class RestaurantScreen extends Component{
         navigator.geolocation.getCurrentPosition((position) => {
             let distance = geolib.getDistance(position.coords,
                                               params.infos.coordinate);
+            console.log("oi");
             this.setState({distance: distance});
         });
     }
-
     render(){
         const { navigate } = this.props.navigation;
         const { params } = this.props.navigation.state;
@@ -52,7 +52,7 @@ export default class RestaurantScreen extends Component{
             <ScrollView>
                 <Modal
                     animationType={'slide'}
-                    transparent={true}
+                    transparent={false}
                     visible={this.state.displayModal} >
 
                     <TextInput
