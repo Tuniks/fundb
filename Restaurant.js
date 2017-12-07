@@ -22,7 +22,6 @@ export default class RestaurantScreen extends Component{
                       distance: 500,
                       review: "",
                       rating: 0};
-
         navigator.geolocation.getCurrentPosition((position) => {
             const { params } = this.props.navigation.state;
             console.log(params.info.coordinate);
@@ -36,8 +35,8 @@ export default class RestaurantScreen extends Component{
         });
     }
     render(){
-        const { navigate } = this.props.navigation;
         const { params } = this.props.navigation.state;
+        const { navigate } = this.props.navigation;
         let stars = [];
         let moneys = [];
         let foods = this.createFoodsView(params.infos.type);

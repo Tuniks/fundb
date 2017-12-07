@@ -38,15 +38,11 @@ export default class SubjectScreen extends Component{
         }
         return(
             <ScrollView>
-                <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
-
                 <View style={{paddingVertical: 15, paddingHorizontal:5}}>
                     <Text style={{fontSize: 32, fontWeight:'bold'}}>
                         {params.infos.name}
                     </Text>
                 </View>
-
-                <View style={{alignSelf:'center', width:'75%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingTop:20}}/>
 
                 <View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:20, paddingHorizontal:10}}>
                     <View style={{flexDirection:'row', justifyContent:'center'}}>

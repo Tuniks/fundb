@@ -74,13 +74,13 @@ export default class TeacherScreen extends Component {
                     paddingHorizontal: 10
                 }}>
                     <View>
-                        <Text>Rigidez</Text>
+                        <Text style={{alignSelf:'center'}}>Rigidez</Text>
                         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                             {rigidity}
                         </View>
                     </View>
                     <View>
-                        <Text>Didática</Text>
+                        <Text style={{alignSelf:'center'}}>Didática</Text>
                         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                             {stars}
                         </View>

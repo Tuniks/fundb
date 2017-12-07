@@ -25,7 +25,6 @@ class HomeScreen extends React.Component {
           <View style={Style.buttonIconRow}>
             <Icon name='access-time' iconStyle={Style.buttonIcon}/>
             <Icon name='payment' iconStyle={Style.buttonIcon}/>
-            <Icon name='airplanemode-active' iconStyle={Style.buttonIcon}/>
           </View>
         </Card>
 
@@ -40,11 +39,10 @@ class HomeScreen extends React.Component {
       <TouchableOpacity
         onPress={()=>navigate('Subject', {infos: item})}>
 
-        <Card title={item.name} containerStyle={Style.card}>
+        <Card title={item.name} containerStyle={Style.card} >
           <View style={Style.buttonIconRow}>
             <Icon name='access-time' iconStyle={Style.buttonIcon}/>
             <Icon name='payment' iconStyle={Style.buttonIcon}/>
-            <Icon name='airplanemode-active' iconStyle={Style.buttonIcon}/>
           </View>
         </Card>
 
@@ -59,11 +57,10 @@ class HomeScreen extends React.Component {
       <TouchableOpacity
         onPress={()=>navigate('Place', {infos: item})}>
 
-        <Card title={item.name} containerStyle={Style.card}>
+        <Card featuredTitle={item.name} containerStyle={Style.card} image={item.img} imageStyle={{height: 100}}>
           <View style={Style.buttonIconRow}>
             <Icon name='access-time' iconStyle={Style.buttonIcon}/>
             <Icon name='payment' iconStyle={Style.buttonIcon}/>
-            <Icon name='airplanemode-active' iconStyle={Style.buttonIcon}/>
           </View>
         </Card>
 
@@ -82,7 +79,6 @@ class HomeScreen extends React.Component {
                 <View style={Style.buttonIconRow}>
                     <Icon name='access-time' iconStyle={Style.buttonIcon}/>
                     <Icon name='payment' iconStyle={Style.buttonIcon}/>
-                    <Icon name='airplanemode-active' iconStyle={Style.buttonIcon}/>
                 </View>
             </Card>
 
