@@ -38,6 +38,8 @@ export default class SubjectScreen extends Component{
         }
         return(
             <ScrollView>
+                <Image source={params.infos.img} style={{height: 225, alignSelf: 'center'}}/>
+
                 <View style={{paddingVertical: 15, paddingHorizontal:5}}>
                     <Text style={{fontSize: 32, fontWeight:'bold'}}>
                         {params.infos.name}
@@ -55,7 +57,7 @@ export default class SubjectScreen extends Component{
 
                 <View style={{alignSelf:'center', width:'90%', borderBottomColor: 'black', borderBottomWidth: 0.5, paddingVertical:20}}/>
 
-                <View style={{paddingHorizontal:5, paddingVertical:10}}>
+                <View style={{paddingHorizontal:20, paddingVertical:10}}>
                     <Text style={{fontWeight:'bold'}}>Professores</Text>
                     {teachers.map((item, index) => {
                         return (

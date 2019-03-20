@@ -61,10 +61,12 @@ export default class RestaurantScreen extends Component{
                     visible={this.state.displayModal} >
 
                     <TextInput
-                        style={{marginTop: 200}}
-                        onChangeText={(text) => this.setState({review: text})} />
+                        style={{marginTop: 200, borderWidth:0.5, height:150, width:250, alignSelf:'center', marginBottom:30, fontSize:18}}
+                        onChangeText={(text) => this.setState({review: text})} multiline={true}
+                        underlineColorAndroid={'transparent'}/>
 
                     <Button
+                        style={{paddingTop:50, width:50}}
                         title={'Avaliar'}
                         onPress={this.setReview.bind(this)} />
                 </Modal>

@@ -86,9 +86,6 @@ export default class TeacherScreen extends Component {
                         </View>
                     </View>
                 </View>
-                {/*<View style={{flexDirection:'row', justifyContent:'space-around', paddingTop:25, paddingHorizontal:10}}>*/}
-                {/*{foods}*/}
-                {/*</View>*/}
 
                 <View style={{
                     alignSelf: 'center',
@@ -98,7 +95,7 @@ export default class TeacherScreen extends Component {
                     paddingVertical: 20
                 }}/>
 
-                <View style={{paddingHorizontal: 5, paddingVertical: 10}}>
+                <View style={{paddingHorizontal: 20, paddingVertical: 10}}>
                     <Text style={{fontWeight: 'bold'}}>Matérias</Text>
                     {subjects.map((item, index) => {
                         return (
